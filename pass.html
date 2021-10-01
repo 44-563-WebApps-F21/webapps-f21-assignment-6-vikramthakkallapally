@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>
+         WebApps Assignment 6 using JAVA Script
+     </title>
+     <header>
+       <h1>Pass phrase by Vikram Thakkallapally</h1> 
+     </header>
+ </head>
+<body>
+<h2>Getting input</h2>
+<div class="container">
+    <form>
+        <label for="form_age">Enter the secret phrase </label>
+        <input type="password" id="form_age" name="form_age" min=10 max=50 step=2 value="Let me in"> <br>
+
+        <label for="form_nick">Enter a phrase </label>
+        <input type="text" id="form_nick" name="form_nick" autofocus> <br>
+
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+    </form>
+</div>
+<div class="container">
+    <p id="result">This text will be replaced </p>
+</div>
+
+<script>
+    let correct = 0;
+    let wrong = 0;
+
+    function processPhrase() {
+        console.log("Getting form values")
+        password = document.getElementById("form_age").value
+        guess = document.getElementById("form_nick").value
+
+        out = document.getElementById("result")
+        if (password == guess) {
+            alert("Access allowed")
+            correct = correct + 1
+            out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
+        } else {
+            alert("Access denied")
+            wrong = wrong + 1
+            out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
+        }
+    }
+</script>
+</body>
+</html> 
