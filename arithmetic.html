@@ -24,6 +24,22 @@
 
 <div id="result"></div>
 
+<form>
+    <input type="radio" id="rg1_plus" name="operation" onclick="processRadio(this.value)" value="plus">
+    <label for="rg1_plus">+</label></br>
+
+    <input type="radio" id="rg1_minus" name="operation" onclick="processRadio(this.value)" value="minus">
+    <label for="rg1_minus">-</label></br>
+
+    <input type="radio" id="rg1_times" name="operation" onclick="processRadio(this.value)" value="times">
+    <label for="rg1_times">*</label></br>
+
+    <input type="radio" id="rg1_divide" name="operation" onclick="processRadio(this.value)" value="divide">
+    <label for="rg1_divide">/</label></br>
+</form>
+
+<p id="result1">This text will be replaced</p>
+
 <script> 
     function powers()
         {
@@ -35,6 +51,34 @@
                result+=Math.pow(value1,i)+" ";
             }
             document.getElementById("result").innerHTML = "Powers of " + value1 + " are : " + result;
+        }
+
+        function processRadio(operation)
+        {
+            let value1 = document.getElementById("form1_base").value
+            let value2 = document.getElementById("form1_exponent").value
+            var result = 0;
+            if (operation == "plus") 
+            {             
+                result = (Number)(value1) + (Number)(value2);
+                document.getElementById("result1").innerHTML = "Addition of " + value1 + " and " + value2 + " = " + result;
+            }
+            else if (operation == "minus") 
+            {              
+                result += (Number)(value1) - (Number)(value2);
+                document.getElementById("result1").innerHTML = "Subtraction of " + value1 + " and " + value2 + " = " + result;
+            }
+            else if (operation == "times") 
+            {               
+                result += (Number)(value1) * (Number)(value2);
+                document.getElementById("result1").innerHTML = "Multiplication of " + value1 + " and " + value2 + " = " + result;
+            }
+            else if (operation == "divide") 
+            {              
+                result += (Number)(value1) / (Number)(value2);
+                document.getElementById("result1").innerHTML = "Division of " + value1 + " and " + value2 + " = " + result;
+            }
+      
         }
 
 function resolveForm (){
