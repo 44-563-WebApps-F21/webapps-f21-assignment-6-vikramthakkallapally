@@ -24,6 +24,9 @@
 <div class="container">
     <p id="result">This text will be replaced </p>
 </div>
+<div class="container">
+    <img src="hamster.jpg" id="image" onclick="newImage()" width="200px" height="200px">
+</div>
 
 <script>
     let correct = 0;
@@ -46,5 +49,30 @@
         }
     }
 </script>
+<script>
+    var usingImage=1;
+    function newImage()
+    {
+    switch(usingImage)
+    {
+        case 1:
+                document.getElementById("image").src = "tiger.jpg";
+                usingImage=2;
+                break;
+        case 2:
+                document.getElementById("image").src = "hamster.jpg";
+                usingImage=3;
+                break;
+        case 3:
+                document.getElementById("image").src = "kangaroo.jpg";
+                usingImage=1;
+                break;
+        default:
+                document.getElementById("image").src = "hamster.jpg";
+        
+    }
+}
+</script>
+
 </body>
 </html> 
