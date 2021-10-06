@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>
+         arithematic.html page
+     </title>
+     <header>
+         Vikram Thakkallapally computes
+     </header>
+ </head>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_base">Enter a base </label>
+    <input type ="number" id="form1_base" name="base element" value=10> <br>
+
+    <label for="form1_exponent">Enter an exponent </label>
+    <input type ="number" id="form1_exponent" name="exponent element”" value=2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+<div id="result"></div>
+
+<script> 
+    function powers()
+        {
+            let value1=document.getElementById("form1_base").value;
+            let value2=document.getElementById("form1_exponent").value;
+            var result="";
+            for( let i=1;i<=value2;i++)
+            {
+               result+=Math.pow(value1,i)+" ";
+            }
+            document.getElementById("result").innerHTML = "Powers of " + value1 + " are : " + result;
+        }
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
