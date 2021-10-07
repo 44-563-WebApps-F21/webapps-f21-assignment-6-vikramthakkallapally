@@ -30,24 +30,35 @@
 
 <script>
     let correct = 0;
-    let wrong = 0;
+        let wrong = 0;
+        var cntNew = 0;
+        var cntPast = 0;
+        function processPhrase() {
+            console.log("Getting form values")
+            password = document.getElementById("form_age").value
+            guess = document.getElementById("form_nick").value
+            out = document.getElementById("result")
+            if (password == guess) {
+                cntNew = 0;
+                correct = correct + 1
+                out.innerHTML = "correct : " + correct + " wrong : " + wrong
+                alert("Access allowed")
 
-    function processPhrase() {
-        console.log("Getting form values")
-        password = document.getElementById("form_age").value
-        guess = document.getElementById("form_nick").value
-
-        out = document.getElementById("result")
-        if (password == guess) {
-            alert("Access allowed")
-            correct = correct + 1
-            out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
-        } else {
-            alert("Access denied")
-            wrong = wrong + 1
-            out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
+            } else {
+                cntNew = cntNew + 1;
+                wrong = wrong + 1
+                out.innerHTML = "correct : " + correct + " wrong : " + wrong
+                alert("Access denied")
+                if (cntNew >= 3) {
+                    if (wrong >= 3) {
+                        incorrectPassphrase()
+                    }
+                }
+            }
         }
-    }
+function incorrectPassphrase() {
+                alert("account locked")
+            }
 </script>
 <script>
     var usingImage=1;

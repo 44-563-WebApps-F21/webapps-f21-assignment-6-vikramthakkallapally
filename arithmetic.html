@@ -4,6 +4,17 @@
      <title>
          arithematic.html page
      </title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
      <header>
          Vikram Thakkallapally computes
      </header>
@@ -12,18 +23,23 @@
 
 <h2>Getting input</h2>
 
-<form>
-    <label for="form1_base">Enter a base </label>
-    <input type ="number" id="form1_base" name="base element" value=10> <br>
-
-    <label for="form1_exponent">Enter an exponent </label>
-    <input type ="number" id="form1_exponent" name="exponent element”" value=2> <br>
-
-    <input type="button" onclick="powers()" value="Compute">
-</form>
-
+<div class="container border bg-info">
+    <form>
+        <div class="row">
+        <label for="form1_base" class="col-sm-2 col-form-label" >Enter a base </label>
+        <input type ="number" id="form1_base" name="base element" value=10> <br>
+        </div>
+        <div class="row">
+        <label for="form1_exponent" class="col-sm-2 col-form-label">Enter an exponent </label>
+        <input type ="number" id="form1_exponent" name="exponent element”" value=2> <br>
+        </div>
+        <input type="button" class="col-sm-2 btn btn-secondary" onclick="powers()" value="Compute">
+    </form>
+</div>
+<div class="container border bg-secondary">
 <div id="result"></div>
-
+</div>
+<div class="container border bg-success">
 <form>
     <input type="radio" id="rg1_plus" name="operation" onclick="processRadio(this.value)" value="plus">
     <label for="rg1_plus">+</label></br>
@@ -37,9 +53,10 @@
     <input type="radio" id="rg1_divide" name="operation" onclick="processRadio(this.value)" value="divide">
     <label for="rg1_divide">/</label></br>
 </form>
-
+</div>
+<div class="container border bg-info">
 <p id="result1">This text will be replaced</p>
-
+</div>
 <script> 
     function powers()
         {

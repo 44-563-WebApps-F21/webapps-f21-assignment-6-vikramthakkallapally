@@ -9,6 +9,7 @@
 
 <h2>Getting input</h2>
 
+<div class="container border" style="color:black">
 <form>
     <input type="checkbox" id="electric" name="property1" class="form-check-input" value="electric">
     <label for="electric" class="form-check-label">electric</label><br>
@@ -19,21 +20,25 @@
     <input type="checkbox" id="gps" name="property3" class="form-check-input" value="gps">
     <label for="gps" class="form-check-label">gps</label><br>
 
-    <input type="button" onclick=" orderCar() " value=" Order a Car ">
+    <input type="button" class="col-sm-3 btn-primary" onclick=" orderCar() " value=" Order a Car ">
 </form>
-
-<p id="result">This text will be replaced </p>
-
+</div>
+<div class="container border bg-secondary">
+    <p id="result">This text will be replaced </p>
+</div>
+<div class="container border" style="color:royalblue">
 <form>
-    <label for="name">Enter a property </label>
-    <input type ="text" id="name" name="property_name" value="color"> <br>
-
-    <label for="value">Enter a value </label>
-    <input type ="text" id="value" name="property_value"> <br>
-
-    <input type="button" onclick="updateCar()" value="Update the car">
+    <div class="row">
+    <label for="name" class="col-sm-2 col-form-label">Enter a property </label>
+    <input type ="text" class="col-sm-4 form-control" id="name" name="property_name" value="color"> <br>
+    </div>
+    <div class="row">
+    <label for="value" class="col-sm-2 col-form-label">Enter a value </label>
+    <input type ="text" class="col-sm-4 form-control" id="value" name="property_value"> <br>
+    </div>
+    <input type="button" class="col-sm-3 btn-primary" onclick="updateCar()" value="Update the car">
 </form>
-
+</div>
 <script> 
     let my_car = {}
     function orderCar ()
